@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AgentPM - AI Delivery Governance Platform</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="site.js"></script>
+
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+    <div class="background-grid"></div>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            AgentPM
+        </div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#">Projects</a>
+            <a href="#">Agents</a>
+            <a href="#">Reports</a>
+        </nav>
+
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <span class="badge">
+                OPEN AGENTIC WEB
+            </span>
+
+            <h1>
+                AI Delivery
+                <br>
+                Governance Platform
+            </h1>
+
+            <p>
+                AgentPM dynamically activates specialist Architecture,
+                Development, Testing and Security agents based on project
+                complexity, budget and risk profile. This optimizes cost,
+                security and delivery outcomes while reducing unnecessary
+                AI token consumption.
+            </p>
+
+            <button class="create-btn">
+                Explore AgentPM
+            </button>
+
+        </div>
+
+        <div class="hero-right">
+
+            <div class="architecture-card">
+
+                <div class="agent-node chief-node">
+                    Chief PM Agent
+                </div>
+
+                <div class="connector"></div>
+
+                <div class="agent-row">
+
+                    <div class="agent-node">
+                        Solution Architect
+                    </div>
+
+                    <div class="agent-node">
+                        Developer Manager
+                    </div>
+
+                    <div class="agent-node">
+                        QA Manager
+                    </div>
+
+                </div>
+
+                <div class="agent-row lower">
+
+                    <div class="agent-node small">
+                        UI Developer
+                    </div>
+
+                    <div class="agent-node small">
+                        Backend Developer
+                    </div>
+
+                    <div class="agent-node small">
+                        Functional Tester
+                    </div>
+
+                    <div class="agent-node small">
+                        Security Tester
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- KPI CARDS -->
+
+    <section class="metrics-grid">
+
+        <div class="metric-card">
+            <div class="metric-title">
+                Projects
+            </div>
+
+            <div id="projectMetric" class="metric-value">
+                0
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">
+                Security Score
+            </div>
+
+            <div class="metric-value score">
+                89
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">
+                Active Agents
+            </div>
+
+            <div class="metric-value">
+                8
+            </div>
+        </div>
+
+        <div class="metric-card">
+            <div class="metric-title">
+                Token Savings
+            </div>
+
+            <div class="metric-value success">
+                41%
+            </div>
+        </div>
+
+    </section>
+
+    <!-- PROJECT CREATION -->
+
+    <section class="create-project">
+
+        <h2>
+            Create New Project
+        </h2>
+
+        <div class="form">
+
+            <input
+                type="text"
+                id="projectName"
+                placeholder="Project Name">
+
+            <input
+                type="number"
+                id="projectBudget"
+                placeholder="Budget ($)">
+
+            <input
+                type="text"
+                id="projectTimeline"
+                placeholder="Timeline">
+
+            <select id="priority">
+                <option>Low</option>
+                <option>Medium</option>
+                <option>High</option>
+                <option>Critical</option>
+            </select>
+
+            <button onclick="createProject()">
+                Launch Project
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- DASHBOARD -->
+
+    <section class="dashboard">
+
+        <div class="card">
+
+            <h3>
+                Active Projects
+            </h3>
+
+            <div id="projectContainer"></div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Agent Activation Timeline
+            </h3>
+
+            <div id="agentTimeline">
+
+                <div class="log">
+                    Waiting for project classification...
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                System Metrics
+            </h3>
+
+            <div class="metric">
+                <span>Projects</span>
+                <span id="projectCount">0</span>
+            </div>
+
+            <div class="metric">
+                <span>Architects</span>
+                <span>1</span>
+            </div>
+
+            <div class="metric">
+                <span>Developers</span>
+                <span>3</span>
+            </div>
+
+            <div class="metric">
+                <span>QA Agents</span>
+                <span>3</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- GOVERNANCE SECTION -->
+
+    <section class="dashboard">
+
+        <div class="card">
+
+            <h3>
+                Token Optimization
+            </h3>
+
+            <div class="log">
+                Available Agents : 8
+            </div>
+
+            <div class="log">
+                Active Agents : 5
+            </div>
+
+            <div class="log">
+                Idle Agents : 3
+            </div>
+
+            <div class="log">
+                Estimated Token Reduction : 41%
+            </div>
+
+            <div class="log">
+                Dynamic Agent Activation Enabled
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Governance Controls
+            </h3>
+
+            <div class="log">
+                ✅ Architecture Review
+            </div>
+
+            <div class="log">
+                ✅ Security Assessment
+            </div>
+
+            <div class="log">
+                ✅ Risk Evaluation
+            </div>
+
+            <div class="log">
+                ✅ Development Governance
+            </div>
+
+            <div class="log">
+                ✅ Release Readiness Review
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                PMO Vision
+            </h3>
+
+            <div class="log">
+                Cost Optimized Delivery
+            </div>
+
+            <div class="log">
+                Security First Development
+            </div>
+
+            <div class="log">
+                Adaptive Agent Activation
+            </div>
+
+            <div class="log">
+                Enterprise Architecture Guidance
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMMAND CENTER -->
+
+    <section class="assistant">
+
+        <div class="command-center-header">
+
+            <div>
+
+                <span class="live-badge">
+                    ● LIVE
+                </span>
+
+                <h2>
+                    AI Delivery Command Center
+                </h2>
+
+                <p>
+                    Chief PM Agent orchestrating Architecture,
+                    Development, QA and Security specialists.
+                </p>
+
+            </div>
+
+            <div class="command-stats">
+
+                <div class="mini-card">
+                    8
+                    <span>Agents</span>
+                </div>
+
+                <div class="mini-card">
+                    89
+                    <span>Security</span>
+                </div>
+
+                <div class="mini-card">
+                    41%
+                    <span>Saved</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="chat-header">
+
+            <h3>
+                Adaptive Multi-Agent Planning Session
+            </h3>
+
+            <p id="assistant-status">
+                ✅ Chief PM Agent connected successfully
+            </p>
+
+        </div>
+
+        <div id="agent-app">
+
+            <div data-ns-slot="header"></div>
+
+            <div class="assistant-panels">
+
+                <div data-ns-slot="chat"></div>
+
+                <div data-ns-slot="agents"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

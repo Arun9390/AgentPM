@@ -1,0 +1,77 @@
+{
+  "brand": "AI Project Management Office",
+  "networks": [
+    {
+      "name": "pmo_agent_network",
+      "front_man": "chief_project_manager",
+      "hocon": "./pmo_agent_network.network.json",
+      "description": "Manage projects, assign tasks, generate test activities and track project progress.",
+      "tags": [
+        "deployed",
+        "nsdeploy"
+      ],
+      "sample_queries": [
+  "Create a banking platform",
+  "Create an e-commerce platform with medium budget",
+  "Build a secure healthcare portal",
+  "Generate test strategy and security assessment",
+  "Recommend cloud and database architecture"
+]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://eu.api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://eu.api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "PMO multi-agent network with Chief Agent, Developer Agent and Tester Agent."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "pmo_agent_network",
+"front_man": "chief_project_manager",
+    "available": false,
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "theme": {
+  "primary": "#2563eb"
+},
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "pmo_agent_network",
+"front_man": "chief_project_manager",
+        "aliases": [
+  "pmo_agent_network",
+  "chief_project_manager"
+],
+        "url": "pmo_agent_network"
+
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./project-actions.js",
+    "agentTools": [
+  "get_project_state"
+]
+  }
+}
